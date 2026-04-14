@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketPlace - Início</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mercadoYellow: '#FFE600',
+                        mercadoBlue: '#3483FA',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <header class="bg-mercadoYellow py-3 shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-4 flex items-center justify-between gap-4">
+            <a href="index.html" class="text-2xl font-black text-gray-800 flex-shrink-0 tracking-tighter">🛒 MarketPlace</a>
+            
+            <div class="flex-grow max-w-3xl hidden sm:block">
+                <input type="text" id="search-input" placeholder="Buscar produtos, marcas e muito mais..." 
+                       class="w-full px-4 py-2.5 rounded shadow-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-mercadoBlue">
+            </div>
+
+            <nav class="flex items-center gap-6">
+                <a href="pages/login.html" id="btn-login" class="text-gray-800 font-medium hover:text-gray-600 hidden md:block text-sm">Entre ou Cadastre-se</a>
+                <a href="pages/carrinho.html" class="relative text-gray-800 hover:text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cart-count" style="display: none;" class="absolute -top-2 -right-2 bg-mercadoBlue text-white text-[10px] font-bold rounded-full h-5 w-5 items-center justify-center shadow">0</span>
+                </a>
+            </nav>
+        </div>
+        <div class="container mx-auto px-4 mt-3 sm:hidden">
+            <input type="text" id="search-input-mobile" placeholder="Buscar produtos..." 
+                   class="w-full px-4 py-2 rounded shadow-sm text-gray-700 focus:outline-none">
+        </div>
+    </header>
+
+    <section class="bg-mercadoBlue text-white py-12 px-4 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">As Melhores Ofertas Estão Aqui</h1>
+        <p class="text-lg opacity-90">Compre com segurança e receba no mesmo dia.</p>
+    </section>
+
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <div id="loading" class="text-center py-10 hidden">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-mercadoBlue mx-auto"></div>
+        </div>
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            </div>
+    </main>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
