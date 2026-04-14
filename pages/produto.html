@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { mercadoYellow: '#FFE600', mercadoBlue: '#3483FA' } } } }
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <header class="bg-mercadoYellow py-3 shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="../index.html" class="text-2xl font-black text-gray-800 tracking-tighter">🛒 MarketPlace</a>
+            <a href="carrinho.html" class="relative text-gray-800 hover:text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                <span id="cart-count" style="display: none;" class="absolute -top-2 -right-2 bg-mercadoBlue text-white text-[10px] font-bold rounded-full h-5 w-5 items-center justify-center shadow">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 flex-grow flex justify-center">
+        <div id="product-details" class="w-full max-w-5xl">
+             <div class="text-center py-10">Carregando detalhes...</div>
+        </div>
+    </main>
+
+    <script src="../js/produtos.js"></script>
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
